@@ -1,8 +1,5 @@
 <h1>New question</h1>
 
-<% semantic_form_for(@question) do |f| %>
-  <%= f.inputs %>
-  <%= f.buttons %>
-<% end %>
+<%= render(:partial => "problem", :object => @problem, :locals => {:read_only => false, :f => f }) %>  
 
 <%= link_to 'Back', questions_path %>

@@ -1,13 +1,12 @@
-<p>
-  <b>Name:</b>
-  <%=h @problem.name %>
-</p>
+<h2>Show Problem</h2>
+<%  semantic_form_for(@problem) do |f| %>
+    <%= render(:partial => "problem", :object => @problem, :locals => {:read_only => true, :f => f }) %>    
+    <% f.buttons do %>
+      <%= link_to 'Edit', edit_problem_path(@problem) %> |
+      <%= link_to 'Back', problems_path %>
+    <% end %>
+<% end %>
 
-<p>
-  <b>Description:</b>
-  <%=h @problem.description %>
-</p>
 
 
-<%= link_to 'Edit', edit_problem_path(@problem) %> |
-<%= link_to 'Back', problems_path %>
+

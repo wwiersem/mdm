@@ -1,19 +1,8 @@
-<h1>New problem</h1>
-
-<% form_for(@problem) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<h2>New Problem</h2>
+<%  semantic_form_for(@problem) do |f| %>
+    <%= render(:partial => "problem", :object => @problem, :locals => {:read_only => false, :f => f }) %>    
+    <% f.buttons do %>
+      <%= f.commit_button  %>
+      <%= link_to 'Back', problems_path %>
+    <% end %>
 <% end %>
-
-<%= link_to 'Back', problems_path %>
