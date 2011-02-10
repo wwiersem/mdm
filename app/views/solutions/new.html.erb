@@ -1,23 +1,9 @@
 <h1>New solution</h1>
 
-<% form_for(@solution) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :contact %><br />
-    <%= f.text_field :contact %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<% semantic_form_for(@solution) do |f| %>
+    <%= render(:partial => "solution", :object => @solution, :locals => {:read_only => false, :f => f }) %>    
+    <% f.buttons do %>
+      <%= f.commit_button  %>
+      <%= link_to 'Back', solutions_path %>
+    <% end %>
 <% end %>
-
-<%= link_to 'Back', solutions_path %>

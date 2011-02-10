@@ -1,0 +1,6 @@
+<% f.inputs do %>
+  <%= f.input :name, :required => (read_only ? false : true), :input_html => { :readonly => read_only } %>
+  <%= f.input :description, :required => (read_only ? false : true), :input_html => { :readonly => read_only } %>
+  <%= f.input :contact, :required => (read_only ? false : true), :input_html => { :readonly => read_only } %>
+  <%= f.input :references, :as => :check_boxes, :required => (read_only ? false : true), :input_html => { :disabled => read_only } %>
+<% end %>

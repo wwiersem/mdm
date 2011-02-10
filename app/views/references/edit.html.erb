@@ -1,20 +1,9 @@
 <h1>Editing reference</h1>
 
-<% form_for(@reference) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<% semantic_form_for(@reference) do |f| %>
+    <%= render(:partial => "reference", :object => @reference, :locals => {:read_only => false, :f => f }) %>    
+    <% f.buttons do %>
+      <%= f.commit_button  %>
+      <%= link_to 'Back', references_path %>
+    <% end %>
 <% end %>
-
-<%= link_to 'Show', @reference %> |
-<%= link_to 'Back', references_path %>

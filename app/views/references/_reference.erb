@@ -1,0 +1,4 @@
+<% f.inputs do %>
+  <%= f.input :name, :required => (read_only ? false : true), :input_html => { :readonly => read_only } %>
+  <%= f.input :description, :required => (read_only ? false : true), :input_html => { :readonly => read_only } %>
+<% end %>

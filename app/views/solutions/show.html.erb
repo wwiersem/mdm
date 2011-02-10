@@ -1,18 +1,10 @@
-<p>
-  <b>Name:</b>
-  <%=h @solution.name %>
-</p>
+<h1>Showing solution</h1>
 
-<p>
-  <b>Description:</b>
-  <%=h @solution.description %>
-</p>
+<% semantic_form_for(@solution) do |f| %>
+    <%= render(:partial => "solution", :object => @solution, :locals => {:read_only => true, :f => f }) %>    
+    <% f.buttons do %>
+      <%= link_to 'Edit', edit_solution_path(@solution) %> |
+      <%= link_to 'Back', solutions_path %>
+    <% end %>
+<% end %>
 
-<p>
-  <b>Contact:</b>
-  <%=h @solution.contact %>
-</p>
-
-
-<%= link_to 'Edit', edit_solution_path(@solution) %> |
-<%= link_to 'Back', solutions_path %>

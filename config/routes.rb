@@ -6,6 +6,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :problems
 
   map.resources :questions
+  
+    map.root :controller => "mdm"
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -1,13 +1,9 @@
-<p>
-  <b>Name:</b>
-  <%=h @reference.name %>
-</p>
+<h1>Showing Reference</h1>
+<%  semantic_form_for(@reference) do |f| %>
+    <%= render(:partial => "reference", :object => @reference, :locals => {:read_only => true, :f => f }) %>    
+    <% f.buttons do %>
+    <%= link_to 'Edit', edit_reference_path(@reference) %> |
+    <%= link_to 'Back', references_path %>
+    <% end %>
+<% end %>
 
-<p>
-  <b>Description:</b>
-  <%=h @reference.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_reference_path(@reference) %> |
-<%= link_to 'Back', references_path %>
