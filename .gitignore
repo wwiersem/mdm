@@ -1,0 +1,9 @@
+config/*.yml
+log/*
+tmp/**/*
+config/initializers/mailer.rb
+public/images/**/*
+public/system/**/*
+db/*.sqlite3
+certs/*
+

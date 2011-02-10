@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @reference.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @reference.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_reference_path(@reference) %> |
+<%= link_to 'Back', references_path %>

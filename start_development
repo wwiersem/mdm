@@ -1,0 +1,4 @@
+#!/bin/bash
+/usr/bin/ruby /usr/bin/mongrel_rails start -p 12002 -d -e development -P log/mongrel.pid
+
+
