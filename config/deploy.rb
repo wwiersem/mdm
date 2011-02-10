@@ -10,7 +10,7 @@ set :deploy_via, :copy
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-server "174.132.88.71", :app, :web, :db, :primary => true 
+server "174.132.88.71:2222", :app, :web, :db, :primary => true 
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
