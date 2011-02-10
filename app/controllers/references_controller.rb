@@ -7,6 +7,7 @@ class ReferencesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @references }
+      format.json { render :layout => false, :json => @references.to_json }    
     end
   end
 
@@ -18,6 +19,7 @@ class ReferencesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @reference }
+      format.json { render :layout => false, :json => @reference.to_json }    
     end
   end
 

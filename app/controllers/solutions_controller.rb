@@ -7,6 +7,7 @@ class SolutionsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @solutions }
+      format.json { render :layout => false, :json => @solutions.to_json }          
     end
   end
 
@@ -18,6 +19,7 @@ class SolutionsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @solution }
+      format.json { render :layout => false, :json => @solution.to_json }    
     end
   end
 
